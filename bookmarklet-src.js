@@ -587,8 +587,8 @@
         <p>Enter your GlobalChat server URL.<br>This is saved and used on every site.</p>
         <div class="gc-label">Server URL</div>
         <input class="gc-register-input" id="gc-server-url-input"
-               type="url" placeholder="https://your-server.com" autocomplete="off" />
-        <div class="gc-server-hint">e.g. http://localhost:3000 or https://mychat.railway.app</div>
+               type="url" placeholder="https://chatting-yfxz.onrender.com" value="https://chatting-yfxz.onrender.com" autocomplete="off" />
+        <div class="gc-server-hint">You can change this later in settings</div>
         <div class="gc-error" id="gc-server-error"></div>
         <button class="gc-register-btn" id="gc-server-connect-btn">Connect</button>
       </div>
@@ -598,6 +598,7 @@
     const btn   = root.querySelector('#gc-server-connect-btn');
     const err   = root.querySelector('#gc-server-error');
     input.focus();
+    input.select(); // Select the default URL so user can easily replace it
 
     function tryConnect() {
       const val = input.value.trim().replace(/\/$/, '');
